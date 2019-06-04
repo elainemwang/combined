@@ -86,6 +86,7 @@ public class mainScreen extends javax.swing.JPanel {
 
     private void TicTacToeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TicTacToeActionPerformed
         // TODO add your handling code here:
+        //rebekah
         new InitialScreen();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -115,6 +116,7 @@ public class mainScreen extends javax.swing.JPanel {
     }//GEN-LAST:event_TicTacToeActionPerformed
 
     private void MinesweeperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MinesweeperActionPerformed
+       //elaine
         try {
             // TODO add your handling code here:
             Play run = new Play();
@@ -125,6 +127,7 @@ public class mainScreen extends javax.swing.JPanel {
 
     private void FlappyBirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FlappyBirdActionPerformed
         // TODO add your handling code here:
+        //kelly
         System.out.println("Starting Flappy Bird - 1.1 by Kelly");
         FlappyBird flappyBird = new FlappyBird();
     }//GEN-LAST:event_FlappyBirdActionPerformed

@@ -19,7 +19,7 @@ import kelly8282.flappybird.*;
  */
 public class run extends JFrame{
     public run(){
-        
+        //elaine
         super("Main");
         
         setSize(600, 300);

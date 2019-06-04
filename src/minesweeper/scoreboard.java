@@ -24,8 +24,8 @@ public class scoreboard extends javax.swing.JPanel {
     /** Creates new form scoreboard */
     public scoreboard() throws FileNotFoundException {
         initComponents();
-        File scs = new File("/Users/elainewang/Desktop/NetbeansProjects/minesweeper/src/minesweeper/scores.txt"); 
-        File nms = new File("/Users/elainewang/Desktop/NetbeansProjects/minesweeper/src/minesweeper/names.txt");
+        File scs = new File("src/minesweeper/scores.txt"); 
+        File nms = new File("src/minesweeper/names.txt");
         Scanner sc = new Scanner(scs);
         Scanner nm = new Scanner(nms);
         for(int i = 0; i < names.length; i++){
@@ -45,8 +45,8 @@ public class scoreboard extends javax.swing.JPanel {
         
     }
     public void update() throws FileNotFoundException{
-        File scs = new File("/Users/elainewang/Desktop/NetbeansProjects/minesweeper/src/minesweeper/scores.txt"); 
-        File nms = new File("/Users/elainewang/Desktop/NetbeansProjects/minesweeper/src/minesweeper/names.txt");
+        File scs = new File("src/minesweeper/scores.txt"); 
+        File nms = new File("src/minesweeper/names.txt");
         Scanner sc = new Scanner(scs);
         Scanner nm = new Scanner(nms);
         for(int i = 0; i < names.length; i++){

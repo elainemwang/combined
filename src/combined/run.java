@@ -5,7 +5,9 @@
  */
 package combined;
 
+import java.awt.Component;
 import java.io.FileNotFoundException;
+import javax.swing.JFrame;
 import minesweeper.*;
 import tictactoe.*;
 import kelly8282.flappybird.*;
@@ -15,14 +17,23 @@ import kelly8282.flappybird.*;
  *
  * @author elainewang
  */
-public class run {
+public class run extends JFrame{
     public run(){
-        mainScreen screen = new mainScreen();
         
+        super("Main");
+        
+        setSize(600, 300);
+        mainScreen screen = new mainScreen();
+        ((Component) screen).setFocusable(true);
+        add(screen);
+        setVisible(true);
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
     public static void main(String args[]) throws FileNotFoundException {
-        Play run = new Play();
+        run Run = new run();
+        /*
         System.out.println("Starting Flappy Bird - 1.1 by Kelly");
         FlappyBird flappyBird = new FlappyBird();
         
@@ -45,11 +56,13 @@ public class run {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
               //  new Game().setVisible(true);
             }
         });
+        
+        */
     }
 }

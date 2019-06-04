@@ -5,6 +5,13 @@
  */
 package combined;
 
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import kelly8282.flappybird.*;
+import minesweeper.*;
+import tictactoe.*;
+
 /**
  *
  * @author elainewang
@@ -31,14 +38,14 @@ public class mainScreen extends javax.swing.JPanel {
         TicTacToe = new javax.swing.JButton();
         Minesweeper = new javax.swing.JButton();
 
-        FlappyBird.setText("jButton1");
+        FlappyBird.setText("Flappy Bird");
         FlappyBird.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FlappyBirdActionPerformed(evt);
             }
         });
 
-        TicTacToe.setText("jButton2");
+        TicTacToe.setText("Tic Tac Toe");
         TicTacToe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TicTacToeActionPerformed(evt);
@@ -59,7 +66,7 @@ public class mainScreen extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(FlappyBird)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(TicTacToe)
                 .addGap(18, 18, 18)
                 .addComponent(Minesweeper)
@@ -79,14 +86,47 @@ public class mainScreen extends javax.swing.JPanel {
 
     private void TicTacToeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TicTacToeActionPerformed
         // TODO add your handling code here:
+        new InitialScreen();
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+              //  new Game().setVisible(true);
+            }
+        });
+
     }//GEN-LAST:event_TicTacToeActionPerformed
 
     private void MinesweeperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MinesweeperActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            Play run = new Play();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(mainScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_MinesweeperActionPerformed
 
     private void FlappyBirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FlappyBirdActionPerformed
         // TODO add your handling code here:
+        System.out.println("Starting Flappy Bird - 1.1 by Kelly");
+        FlappyBird flappyBird = new FlappyBird();
     }//GEN-LAST:event_FlappyBirdActionPerformed
 
 

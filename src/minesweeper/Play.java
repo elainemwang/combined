@@ -83,7 +83,7 @@ public class Play extends JFrame implements overListener {
         pack();
         setVisible(true);
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void main(String args[]) throws FileNotFoundException {

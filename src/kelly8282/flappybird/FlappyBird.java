@@ -22,7 +22,7 @@ public class FlappyBird extends JFrame
             Course course = new Course(new GameOptions(0, 1, 1, 2, true));
 
             setTitle(FlappyBird.getGameName() + " -Kelly Liu- " + FlappyBird.getVersion());
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setSize(width, height);
             
             BufferedImage icon = ImageIO.read(FlappyBird.class.getResource("/assets/icon.png"));

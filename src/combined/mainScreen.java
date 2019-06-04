@@ -9,8 +9,12 @@ import java.io.FileNotFoundException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import kelly8282.flappybird.*;
+import java.awt.Component;
+import javax.swing.JFrame;
 import minesweeper.*;
 import tictactoe.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  *
@@ -18,10 +22,25 @@ import tictactoe.*;
  */
 public class mainScreen extends javax.swing.JPanel {
 
+	JFrame frame;
+
+
+	public static void main(String[] args)
+	{
+		mainScreen screen = new mainScreen();
+	}
+
     /**
      * Creates new form mainScreen
      */
     public mainScreen() {
+		((Component) this).setFocusable(true);
+		frame = new JFrame("Main");
+		frame.setSize(600, 300);
+		frame.add(this);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		
         initComponents();
     }
 
@@ -129,7 +148,14 @@ public class mainScreen extends javax.swing.JPanel {
         // TODO add your handling code here:
         //kelly
         System.out.println("Starting Flappy Bird - 1.1 by Kelly");
+        frame.setVisible(false);
         FlappyBird flappyBird = new FlappyBird();
+        flappyBird.addWindowListener(new WindowAdapter() {
+        	public void windowClosing(WindowEvent we) {
+        		frame.setVisible(true);
+        		flappyBird.dispose();
+        	}
+        });
     }//GEN-LAST:event_FlappyBirdActionPerformed
 
 

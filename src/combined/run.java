@@ -30,6 +30,15 @@ public class run extends JFrame{
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
+    public static void hide()
+    {
+    	setVisible(false);
+    }
+    public static void show()
+    {
+    	setVisible(true);
+    }
     
     public static void main(String args[]) throws FileNotFoundException {
         run Run = new run();

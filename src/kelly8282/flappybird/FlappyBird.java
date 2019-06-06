@@ -17,6 +17,7 @@ public class FlappyBird extends JFrame
 
     public FlappyBird() 
     {
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         try 
         {
             Course course = new Course(new GameOptions(0, 1, 1, 2, true));

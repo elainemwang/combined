@@ -37,6 +37,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 //inherits the Game class
 public class InitialScreen extends Game implements ActionListener{
@@ -57,7 +59,7 @@ public class InitialScreen extends Game implements ActionListener{
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     
-	JFrame window;
+	public JFrame window;
 	Container con;
 	JPanel titlePanel, introPanel, startButtonPanel, textFieldPanel;
 	JLabel titleLabel, introLabel, nameLabel;
@@ -66,6 +68,7 @@ public class InitialScreen extends Game implements ActionListener{
 	JTextArea introText;
 	JTextField PlayerXName;
 	JTextField PlayerOName;
+        Game game;
 	
 	TitleScreenHandler tsHandler = new TitleScreenHandler();
 	
@@ -121,7 +124,7 @@ public class InitialScreen extends Game implements ActionListener{
 		PlayerXName.setText("player X name");
 		
 		PlayerOName = new JTextField();
-		PlayerXName.setText("player O name");
+		PlayerOName.setText("player O name");
 		
 		titlePanel.add(titleLabel);
 		titlePanel.add(nameLabel);
@@ -139,7 +142,14 @@ public class InitialScreen extends Game implements ActionListener{
 
 	public void createGameScreen(){
 		window.setVisible(false);
-		new Game().setVisible(true);
+                game = new Game();
+		game.setVisible(true);
+                game.addWindowListener(new WindowAdapter() {
+                    @Override
+                    public void windowClosing(WindowEvent we) {
+                            System.out.println("game closed");
+                    }
+                });
 		//jLabelMSG.setText(PlayerXName.getText() + "vs" + PlayerOName.getText());
 		window.dispose();
 	}

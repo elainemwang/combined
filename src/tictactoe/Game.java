@@ -1,4 +1,5 @@
 package tictactoe;
+import combined.*;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -221,7 +222,8 @@ import javax.swing.JTextField;
 	        	public void actionPerformed(ActionEvent args0)	{
 	        		if (JOptionPane.showConfirmDialog(getContentPane(), "confirm if you want to exit", "tic tac toe", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION)	{
 	        		
-	        			System.exit(0);
+	        			new mainScreen();
+                                        dispose();
 	        			
 	        		}
 	        	}

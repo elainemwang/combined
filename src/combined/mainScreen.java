@@ -15,6 +15,12 @@ import minesweeper.*;
 import tictactoe.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.GroupLayout;
+import javax.swing.SwingConstants;
 
 /**
  *
@@ -34,10 +40,13 @@ public class mainScreen extends javax.swing.JPanel {
      * Creates new form mainScreen
      */
     public mainScreen() {
+    	setBackground(Color.BLACK);
 		((Component) this).setFocusable(true);
 		frame = new JFrame("Main");
+		frame.getContentPane().setBackground(Color.BLACK);
+		frame.setBackground(Color.BLACK);
 		frame.setSize(600, 300);
-		frame.add(this);
+		frame.getContentPane().add(this);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
@@ -54,24 +63,31 @@ public class mainScreen extends javax.swing.JPanel {
     private void initComponents() {
 
         FlappyBird = new javax.swing.JButton();
+        FlappyBird.setBackground(Color.WHITE);
+        FlappyBird.setForeground(Color.YELLOW);
+        FlappyBird.setFont(new Font("Silom", Font.PLAIN, 20));
         TicTacToe = new javax.swing.JButton();
+        TicTacToe.setVerticalAlignment(SwingConstants.TOP);
+        TicTacToe.setFont(new Font("Adobe Garamond Pro", Font.PLAIN, 20));
         Minesweeper = new javax.swing.JButton();
+        Minesweeper.setFont(new Font("Chalkduster", Font.PLAIN, 20));
+        Minesweeper.setForeground(Color.RED);
 
-        FlappyBird.setText("Flappy Bird");
+        FlappyBird.setText("FLAPPY BIRD");
         FlappyBird.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FlappyBirdActionPerformed(evt);
             }
         });
 
-        TicTacToe.setText("Tic Tac Toe");
+        TicTacToe.setText("TICTACTOE");
         TicTacToe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TicTacToeActionPerformed(evt);
             }
         });
 
-        Minesweeper.setText("Minesweeper");
+        Minesweeper.setText("MINESWEEPER");
         Minesweeper.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MinesweeperActionPerformed(evt);
@@ -79,28 +95,28 @@ public class mainScreen extends javax.swing.JPanel {
         });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(FlappyBird)
-                .addGap(18, 18, 18)
-                .addComponent(TicTacToe)
-                .addGap(18, 18, 18)
-                .addComponent(Minesweeper)
-                .addContainerGap(20, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(15)
+        			.addComponent(FlappyBird, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(TicTacToe, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(Minesweeper, GroupLayout.PREFERRED_SIZE, 198, Short.MAX_VALUE)
+        			.addGap(15))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FlappyBird)
-                    .addComponent(TicTacToe)
-                    .addComponent(Minesweeper))
-                .addContainerGap(224, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap(118, Short.MAX_VALUE)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(FlappyBird)
+        				.addComponent(TicTacToe, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(Minesweeper, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
+        			.addGap(122))
         );
+        this.setLayout(layout);
     }// </editor-fold>//GEN-END:initComponents
 
     private void TicTacToeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TicTacToeActionPerformed

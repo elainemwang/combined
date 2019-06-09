@@ -61,7 +61,7 @@ public class mainScreen extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+//rebekah
         FlappyBird = new javax.swing.JButton();
         FlappyBird.setBackground(Color.WHITE);
         FlappyBird.setForeground(Color.YELLOW);

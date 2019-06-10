@@ -61,7 +61,7 @@ public class mainScreen extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-//rebekah
+//rebekah kelly and elaine
         FlappyBird = new javax.swing.JButton();
         FlappyBird.setBackground(Color.WHITE);
         FlappyBird.setForeground(Color.YELLOW);
@@ -172,9 +172,11 @@ public class mainScreen extends javax.swing.JPanel {
             frame.setVisible(false);
             Play minesweeper = new Play();
             minesweeper.addWindowListener(new WindowAdapter() {
-        	public void windowClosing(WindowEvent we) {
+        	//kelly
+            	public void windowClosing(WindowEvent we) {
         		frame.setVisible(true);
         		minesweeper.dispose();
+       //elaine
         	}
         });
         } catch (FileNotFoundException ex) {
